@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #002046;
+  --color-primary-container: #1b365d;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #87a0cd;
+  --color-primary-fixed: #d6e3ff;
+  --color-primary-fixed-dim: #aec7f7;
+  --color-on-primary-fixed: #001b3d;
+  --color-on-primary-fixed-variant: #2e476f;
+  --color-inverse-primary: #aec7f7;
+
+  --color-secondary: #904d00;
+  --color-secondary-container: #fe932c;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #663500;
+  --color-secondary-fixed: #ffdcc3;
+  --color-secondary-fixed-dim: #ffb77d;
+  --color-on-secondary-fixed: #2f1500;
+  --color-on-secondary-fixed-variant: #6e3900;
+
+  --color-tertiary: #002522;
+  --color-tertiary-container: #003d37;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #3cafa2;
+  --color-tertiary-fixed: #89f5e7;
+  --color-tertiary-fixed-dim: #6bd8cb;
+  --color-on-tertiary-fixed: #00201d;
+  --color-on-tertiary-fixed-variant: #005049;
+
+  --color-surface: #f9f9ff;
+  --color-surface-bright: #f9f9ff;
+  --color-surface-dim: #cfdaf2;
+  --color-surface-variant: #d8e3fb;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f0f3ff;
+  --color-surface-container: #e7eeff;
+  --color-surface-container-high: #dee8ff;
+  --color-surface-container-highest: #d8e3fb;
+  --color-surface-tint: #465f88;
+  --color-inverse-surface: #263143;
+  --color-inverse-on-surface: #ecf1ff;
+
+  --color-background: #f9f9ff;
+  --color-on-background: #111c2d;
+  --color-on-surface: #111c2d;
+  --color-on-surface-variant: #44474e;
+
+  --color-outline: #74777f;
+  --color-outline-variant: #c4c6cf;
+
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error: #ffffff;
+  --color-on-error-container: #93000a;
+
+  --font-headline-xl: "Plus Jakarta Sans", sans-serif;
+  --font-headline-xl-mobile: "Plus Jakarta Sans", sans-serif;
+  --font-headline-lg: "Plus Jakarta Sans", sans-serif;
+  --font-headline-lg-mobile: "Plus Jakarta Sans", sans-serif;
+  --font-headline-md: "Plus Jakarta Sans", sans-serif;
+  --font-headline-sm: "Plus Jakarta Sans", sans-serif;
+  --font-body-lg: "Inter", sans-serif;
+  --font-body-md: "Inter", sans-serif;
+  --font-body-sm: "Inter", sans-serif;
+  --font-label-md: "Inter", sans-serif;
+  --font-label-sm: "Inter", sans-serif;
+  --font-code-md: "JetBrains Mono", monospace;
+  --font-code-sm: "JetBrains Mono", monospace;
+
+  --spacing-space-xs: 0.25rem;
+  --spacing-space-sm: 0.5rem;
+  --spacing-space-md: 1rem;
+  --spacing-space-lg: 1.5rem;
+  --spacing-space-xl: 2.5rem;
+  --spacing-margin-mobile: 1rem;
+  --spacing-gutter-mobile: 1rem;
+  --spacing-margin: 2rem;
+  --spacing-gutter: 1.5rem;
+}
+
+@layer base {
+  html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9ff;
+    color: #111c2d;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    overscroll-behavior-y: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+
+  main > :first-child {
+    margin-top: 0 !important;
+  }
+  main > :last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+/* Material Symbols Outlined settings */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+  font-size: 20px;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Custom Scrollbars */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f0f3ff;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #c4c6cf;
+  border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #74777f;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Sticky Freeze Columns for Gradebook Table */
+.freeze-col-0 {
+  position: sticky;
+  left: 0;
+  z-index: 20;
+}
+.freeze-col-1 {
+  position: sticky;
+  left: 48px;
+  z-index: 20;
+}
+.freeze-col-2 {
+  position: sticky;
+  left: 238px;
+  z-index: 20;
+}
+.freeze-col-3 {
+  position: sticky;
+  left: 368px;
+  z-index: 20;
+  box-shadow: 2px 0 4px -2px rgba(17, 28, 45, 0.08);
+}
+thead .freeze-col-0,
+thead .freeze-col-1,
+thead .freeze-col-2,
+thead .freeze-col-3 {
+  z-index: 30;
+}
